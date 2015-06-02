@@ -310,7 +310,7 @@ SerializedObject.prototype.hash = function(prefix) {
   const bits = sjcl.codec.bytes.toBits(sign_buffer.buffer);
   const sha512hex = sjcl.codec.hex.fromBits(sjcl.hash.sha512.hash(bits));
 
-  return UInt256.from_hex(sha512hex.substr(0, 64));
+  return UInt256.from_hex(sha512hex.substr(0, 64).toUpperCase());
 };
 
 // DEPRECATED

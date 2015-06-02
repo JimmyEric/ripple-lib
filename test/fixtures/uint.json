@@ -1,0 +1,705 @@
+{
+  "UInt128": {
+    "from_json().to_json()": [
+      {
+        "input": "00000000000000000000000000000000",
+        "expected": "00000000000000000000000000000000"
+      },
+      {
+        "input": "00000000000000000000000000000001",
+        "expected": "00000000000000000000000000000001"
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+      },
+      {
+        "input": "A2A66C43AA2A0CB7F82D41D63A5746E7",
+        "expected": "A2A66C43AA2A0CB7F82D41D63A5746E7"
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffff",
+        "expected": null
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": null
+      },
+      {
+        "expected": null
+      },
+      {
+        "input": 0,
+        "expected": null
+      }
+    ],
+    "from_json().to_bytes()": [
+      {
+        "input": "00000000000000000000000000000000",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "input": "00000000000000000000000000000001",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": [
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "input": "E1E5D55926E17089C1EBAED2F8698F79",
+        "expected": [
+          225,
+          229,
+          213,
+          89,
+          38,
+          225,
+          112,
+          137,
+          193,
+          235,
+          174,
+          210,
+          248,
+          105,
+          143,
+          121
+        ]
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffff",
+        "expected": null
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": null
+      },
+      {
+        "input": 0,
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ],
+    "from_number().to_json()": [
+      {
+        "input": 0,
+        "expected": "00000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "00000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": null
+      },
+      {
+        "input": "0",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ],
+    "from_number().to_hex()": [
+      {
+        "input": 0,
+        "expected": "00000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "00000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": null
+      },
+      {
+        "input": "0",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ]
+  },
+  "UInt256": {
+    "from_json().to_json()": [
+      {
+        "input": "0000000000000000000000000000000000000000000000000000000000000000",
+        "expected": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "input": "0000000000000000000000000000000000000000000000000000000000000001",
+        "expected": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+      },
+      {
+        "input": "A73C7FEE9216BD5201A3EAD1A9412D3FC1E5E9FA6ACFDDF679CB32EE056B1C79",
+        "expected": "A73C7FEE9216BD5201A3EAD1A9412D3FC1E5E9FA6ACFDDF679CB32EE056B1C79"
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "expected": null
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      },
+      {
+        "input": 0,
+        "expected": null
+      }
+    ],
+    "from_json().to_bytes()": [
+      {
+        "input": "0000000000000000000000000000000000000000000000000000000000000000",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "input": "0000000000000000000000000000000000000000000000000000000000000001",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": [
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "input": "2A7C44CFE813E367923451B8F5BE0E70C97C42DD6B088B2AD62E3E5FA73BF934",
+        "expected": [
+          42,
+          124,
+          68,
+          207,
+          232,
+          19,
+          227,
+          103,
+          146,
+          52,
+          81,
+          184,
+          245,
+          190,
+          14,
+          112,
+          201,
+          124,
+          66,
+          221,
+          107,
+          8,
+          139,
+          42,
+          214,
+          46,
+          62,
+          95,
+          167,
+          59,
+          249,
+          52
+        ]
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "expected": null
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": null
+      },
+      {
+        "input": 0,
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ],
+    "from_number().to_json()": [
+      {
+        "input": 0,
+        "expected": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "00000000000000000000000000000000000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": null
+      },
+      {
+        "input": "0",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ],
+    "from_number().to_hex()": [
+      {
+        "input": 0,
+        "expected": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "00000000000000000000000000000000000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": null
+      },
+      {
+        "input": "0",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ]
+  },
+  "UInt160": {
+    "from_json().to_json()": [
+      {
+        "input": "0000000000000000000000000000000000000000",
+        "expected": "0000000000000000000000000000000000000000"
+      },
+      {
+        "input": "0000000000000000000000000000000000000001",
+        "expected": "0000000000000000000000000000000000000001"
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+      },
+      {
+        "input": "1F7555E865C5B1E33D6AA02836B16A2433A0D430",
+        "expected": "1F7555E865C5B1E33D6AA02836B16A2433A0D430"
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffffffffffff",
+        "expected": "null"
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": "null"
+      },
+      {
+        "input": null,
+        "expected": "null"
+      },
+      {
+        "expected": "null"
+      },
+      {
+        "input": 0,
+        "expected": "rrrrrrrrrrrrrrrrrrrrrhoLvTp"
+      }
+    ],
+    "from_json().to_bytes()": [
+      {
+        "input": "0000000000000000000000000000000000000000",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "input": "0000000000000000000000000000000000000001",
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "input": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+        "expected": [
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "input": "9311AE068894B74095A865AB8F9E52A7534B522D",
+        "expected": [
+          147,
+          17,
+          174,
+          6,
+          136,
+          148,
+          183,
+          64,
+          149,
+          168,
+          101,
+          171,
+          143,
+          158,
+          82,
+          167,
+          83,
+          75,
+          82,
+          45
+        ]
+      },
+      {
+        "input": "ffffffffffffffffffffffffffffffffffffffff",
+        "expected": null
+      },
+      {
+        "input": "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+        "expected": null
+      },
+      {
+        "input": 0,
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ],
+    "from_number().to_json()": [
+      {
+        "input": 0,
+        "expected": "0000000000000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "0000000000000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "00000000000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": "null"
+      },
+      {
+        "input": "0",
+        "expected": "null"
+      },
+      {
+        "input": null,
+        "expected": "null"
+      },
+      {
+        "expected": "null"
+      }
+    ],
+    "from_number().to_hex()": [
+      {
+        "input": 0,
+        "expected": "0000000000000000000000000000000000000000"
+      },
+      {
+        "input": 1,
+        "expected": "0000000000000000000000000000000000000001"
+      },
+      {
+        "input": 4294967295,
+        "expected": "00000000000000000000000000000000FFFFFFFF"
+      },
+      {
+        "input": -1,
+        "expected": null
+      },
+      {
+        "input": "0",
+        "expected": null
+      },
+      {
+        "input": null,
+        "expected": null
+      },
+      {
+        "expected": null
+      }
+    ]
+  }
+}

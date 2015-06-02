@@ -1,23 +1,55 @@
-var assert  = require('assert');
-var UInt128 = require('ripple-lib').UInt128;
+'use strict';
 
-describe('UInt', function() {
-  describe('128', function() {
-    describe('#parse_number', function () {
-      it('should create 00000000000000000000000000000000 when called with 0', function () {
-        var val = UInt128.from_number(0);
-        assert.strictEqual(val.to_hex(), '00000000000000000000000000000000');
-      });
-      it('should create 00000000000000000000000000000001 when called with 1', function () {
-        var val = UInt128.from_number(1);
-        assert.strictEqual(val.to_hex(), '00000000000000000000000000000001');
-      });
-      it('should create 000000000000000000000000FFFFFFFF when called with 0xFFFFFFFF', function () {
-        var val = UInt128.from_number(0xFFFFFFFF);
-        assert.strictEqual(val.to_hex(), '000000000000000000000000FFFFFFFF');
+/* eslint-disable max-len */
+
+const assert = require('assert-diff');
+const lodash = require('lodash');
+const ripple = require('ripple-lib');
+const fixtures = require('./fixtures/uint');
+
+function runTestCase(rippleType, inputMethod, outputMethod, test) {
+  let val = rippleType[inputMethod](test.input);
+
+  assert.strictEqual(val.is_valid(), String(test.expected) !== 'null', 'validity check failed: ' + test.input);
+
+  val = val[outputMethod]();
+
+  function errMsg() {
+    return 'output check failed for '
+    + typeof test.input + ': ' + test.input
+    + ', expected ' + val + ' to be '
+    + (test.expected === 'null' ? NaN : test.expected);
+  }
+
+  if (test.expected === 'null') {
+    // XXX
+    // UInt160.to_json() returns NaN rather than null if
+    // input is invalid. JSON.stringify(NaN) === 'null'
+    assert.strictEqual(lodash.isNaN(val), true, errMsg());
+  } else {
+    assert.deepEqual(val, test.expected, errMsg());
+  }
+}
+
+function makeTests(uIntType) {
+  describe(uIntType, function() {
+    let rippleType = ripple[uIntType];
+    let tests = fixtures[uIntType];
+
+    assert(rippleType && tests);
+
+    lodash.each(tests, (test, key) => {
+      // Example: from_json().to_bytes()
+      let [, inputMethod, outputMethod] = /^(\w+)\(\)\.(\w+)\(\)$/.exec(key);
+
+      assert(inputMethod && outputMethod);
+
+      it(key, () => {
+        test.forEach(
+          lodash.partial(runTestCase, rippleType, inputMethod, outputMethod));
       });
     });
   });
-});
+}
 
-// vim:sw=2:sts=2:ts=8:et
+['UInt128', 'UInt160', 'UInt256'].forEach(makeTests);
